@@ -72,10 +72,20 @@ class _HomeScreenState extends State<HomeScreen> {
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: ElevatedButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(
+                      Color(0xFF000000),
+                    ),
+                  ),
                   onPressed: _isLoading ? null : _captureAndSend,
                   child: _isLoading
                       ? CircularProgressIndicator()
-                      : Text('Send Photo'),
+                      : Text(
+                          'Send',
+                          style: TextStyle(
+                            color: Color(0xFFFFFFFF),
+                          ),
+                        ),
                 ),
               ),
             ],
